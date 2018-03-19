@@ -4,6 +4,8 @@
 <head>
 <title>{% block title %}{% endblock %}</title>
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "admin/css/base.css" %}{% endblock %}">
+<script type="text/javascript" src="{% static "admin/js/jquery-3.3.1-min.js" %}"></script>
+<script type="text/javascript" src="{% static "admin/js/base_site.js" %}"></script>
 {% block extrastyle %}{% endblock %}
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}">{% endif %}
 {% block extrahead %}{% endblock %}

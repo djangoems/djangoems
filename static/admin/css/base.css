@@ -778,7 +778,7 @@ table#change-history tbody th {
 }
 
 #content-main {
-    float: left;
+    /*float: left;*/
     width: 100%;
 }
 
@@ -787,6 +787,7 @@ table#change-history tbody th {
     width: 260px;
     position: relative;
     margin-right: -300px;
+    margin-top: -130px;
 }
 
 #footer {
@@ -979,6 +980,7 @@ table#change-history tbody th {
 #avatar-div
 {
 	float:right;
+    cursor: pointer;
 }
 
 #avatar-style
@@ -995,6 +997,9 @@ table#change-history tbody th {
 	margin-right:40px;
 	float:right;
 	border-radius:0px 0px 3px 3px;
+    display: none;
+    z-index: 99999;
+    position: relative;
 }
 
 #master-tools-ul
