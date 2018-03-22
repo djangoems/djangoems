@@ -17,3 +17,6 @@ class org_branches(models.Model):
 	class Meta:
 		verbose_name = 'Branch'
 		verbose_name_plural = 'Branches'
+
+	def __str__(self):
+	    return self.branch_name
