@@ -1,11 +1,13 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class organization(models.Model):
 	name = models.CharField(max_length=100)
 	
 	class Meta:
-		verbose_name = 'Organization'
+		verbose_name = ' Organization'
+		verbose_name_plural = ' Organization'
 
 	def __str__(self):
 	    return self.name
@@ -20,3 +22,10 @@ class org_branches(models.Model):
 
 	def __str__(self):
 	    return self.branch_name
+
+class user_profile(models.Model):
+	user = models.OneToOneField(User, unique=True, on_delete=models.CASCADE)
+	branch = models.ForeignKey(org_branches, on_delete=models.CASCADE)
+
+	class Meta:
+		verbose_name = 'Profile'
