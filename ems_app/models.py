@@ -29,3 +29,25 @@ class user_profile(models.Model):
 
 	class Meta:
 		verbose_name = 'Profile'
+
+class classes(models.Model):
+	class_name = models.CharField(max_length=30)
+	branch = models.ForeignKey(org_branches,on_delete=models.CASCADE)
+
+	class Meta:
+		verbose_name = 'Class'
+		verbose_name_plural = 'Classes'
+
+	def __str__(self):
+		return self.class_name
+
+class sections(models.Model):
+	section_name = models.CharField(max_length=30)
+	clas = models.ForeignKey(classes,on_delete=models.CASCADE)
+
+	class Meta:
+		verbose_name = 'Section'
+		verbose_name_plural = 'Sections'
+
+	def __str__(self):
+		return self.section_name
