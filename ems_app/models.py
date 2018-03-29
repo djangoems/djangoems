@@ -13,7 +13,7 @@ class organization(models.Model):
 	    return self.name
 
 class org_branches(models.Model):
-	org = models.ForeignKey(organization, on_delete=models.CASCADE)
+	org = models.ForeignKey(organization, on_delete=models.CASCADE, verbose_name = 'Organization')
 	branch_name = models.CharField(max_length=100)
 
 	class Meta:
@@ -31,8 +31,8 @@ class user_profile(models.Model):
 		verbose_name = 'Profile'
 
 class classes(models.Model):
-	class_name = models.CharField(max_length=30)
 	branch = models.ForeignKey(org_branches,on_delete=models.CASCADE)
+	class_name = models.CharField(max_length=30)
 
 	class Meta:
 		verbose_name = 'Class'
@@ -42,8 +42,8 @@ class classes(models.Model):
 		return self.class_name
 
 class sections(models.Model):
+	clas = models.ForeignKey(classes,on_delete=models.CASCADE, verbose_name='Class')
 	section_name = models.CharField(max_length=30)
-	clas = models.ForeignKey(classes,on_delete=models.CASCADE)
 
 	class Meta:
 		verbose_name = 'Section'
